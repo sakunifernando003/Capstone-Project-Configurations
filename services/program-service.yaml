@@ -4,12 +4,13 @@ spring:
       enabled: true
 
   mongodb:
-    host: localhost
-    port: 13500
-    database: eca
-    username: root
-    password: mongodb
-    authentication-database: admin
+    uri: mongodb://root:pp60mEdEVvdQ7fBWbm3zq2ME2MX6iGVZ2otZpUz4Wpf3MlIw@ca129452-30c3-4b73-ae19-f64158672ce1.asia-southeast1.firestore.goog:443/dbcapstone?loadBalanced=true&tls=true&authMechanism=SCRAM-SHA-256&retryWrites=false
+   
 
 server:
-  port: 8001
+  port: 0
+
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
